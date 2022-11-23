@@ -21,8 +21,8 @@ console.log("theEvents", events)
     <div className="App">
       <h1>SportMeet Events</h1>
       {events.map(event => 
-      <div >
-        <h2 key="{event._id}">{event.name}</h2>
+      <div key={event._id}>
+        <h2 >{event.name}</h2>
         <p>{event.sport}</p>
       </div>
       )}
