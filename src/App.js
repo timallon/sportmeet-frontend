@@ -1,31 +1,17 @@
 import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import SignupPage from "./pages/Signup";
 
 function App() {
-  const [events, setEvents] = useState([]);
-
-console.log("theEvents", events)
-
-  const fetchEvents = async() => {
-    const response = await fetch("http://localhost:5005/events")
-    const events = await response.json()
-    setEvents(events)
-
-  }
-  useEffect( () => {
-    fetchEvents()
-    
-  }, [] )
-
-
   return (
     <div className="App">
-      <h1>SportMeet Events</h1>
-      {events.map(event => 
-      <div key={event._id}>
-        <h2 >{event.name}</h2>
-        <p>{event.sport}</p>
-      </div>
-      )}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
   );
 }
