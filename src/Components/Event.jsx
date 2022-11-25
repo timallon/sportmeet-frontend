@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import React from "react";
 
-const Event = ({ event }) => {};
-  
+function Event() {
+  return <div>Event</div>;
+}
 
-export default Event
+export default Event;
